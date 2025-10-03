@@ -1,12 +1,13 @@
 # Import python packages
 import streamlit as st
-streamlit.title('Custom Smoothie Order Form')
+from snowflake.snowpark.functions import col
+st.title(f" :cup_with_straw: Customize your smoothie ! :cup_with_straw:")
 cnx=st.connections("snowflake")
 session=cnx.session()
-from snowflake.snowpark.functions import col
+
 
 # Write directly to the app
-st.title(f" :cup_with_straw: Customize your smoothie ! :cup_with_straw:")
+
 st.write(
   """Choose the fruit you want in yoour smoothie!
   """
