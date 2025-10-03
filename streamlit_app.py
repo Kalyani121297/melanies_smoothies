@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+streamlit.title('Custom Smoothie Order Form')
 cnx=st.connections("snowflake")
 session=cnx.session()
 from snowflake.snowpark.functions import col
