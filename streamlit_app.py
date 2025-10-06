@@ -28,7 +28,7 @@ st.text(ingredients_list)
 #Convert snowpark df to pandas df so we can use LOC function
 pd_df=my_dataframe.to_pandas()
 st.dataframe(pd_df)
-st.stop()
+#st.stop()
 
 
 # Process smoothie order
