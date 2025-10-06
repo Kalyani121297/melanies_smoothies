@@ -19,11 +19,17 @@ session = cnx.session()
 
 # Fetch available fruits
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('fruit_name'),col('SEARCH_ON'))
-st.dataframe(data=my_dataframe, use_container_width=True)
-st.stop()
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
 ingredients_list = st.multiselect('Choose up to 5 Ingredients:', my_dataframe, max_selections=5)
 st.write(ingredients_list)
 st.text(ingredients_list)
+
+#Convert snowpark df to pandas df so we can use LOC function
+pd_df=my_dataframe.to_pandas()
+st.dataframe(pd_df)
+st.stop()
+
 
 # Process smoothie order
 if ingredients_list:
