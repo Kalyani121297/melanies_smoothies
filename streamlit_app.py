@@ -41,7 +41,7 @@ if ingredients_list:
         st.subheader(f"{fruit_chosen} Nutrition Information")
 
         # Get nutrition info from API
-        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{SEARCH_ON}")
+        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")
         st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     # Show ingredients string
